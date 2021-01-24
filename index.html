@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            position: relative;            
+        }
+
+        .btn{
+            width: 50px;
+            display: inline-block;
+        }
+        #imagens{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <audio controls id="musica">
+        <source src="./assents/audio/chegouaahora.mp3" type="audio/mp3">
+    </audio>
+    <div id="imagens">
+        <img class="btn" src="./assents/imagens/play.png" onclick="playAudio()">
+        <img class="btn" src="./assents/imagens/stop.png" onclick="stopAudio()">
+        <img class="btn" src="./assents/imagens/menos15.png" onclick="menos15()">
+        <img class="btn" src="./assents/imagens/menos.png" onclick="menos()">
+        <img class="btn" src="./assents/imagens/mais.png" onclick="mais()">
+        <img class="btn" src="./assents/imagens/mais15.png" onclick="mais15()">
+    </div>
+</div>
+
+<script>
+    function playAudio(){
+        document.getElementById("musica").play();
+    }
+    function stopAudio(){
+        document.getElementById("musica").pause();
+        document.getElementById("musica").currentTime = 0;
+    }
+    function mais15(){
+        document.getElementById("musica").currentTime += 15;
+    }
+    function menos15(){
+        document.getElementById("musica").currentTime -= 15;
+    }function menos(){
+        document.getElementById("musica").playbackRate -= 0.1;
+    }function mais(){
+        document.getElementById("musica").playbackRate += 0.1;
+    }
+</script>
+</body>
+</html>
